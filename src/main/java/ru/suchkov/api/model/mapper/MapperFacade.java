@@ -1,4 +1,4 @@
-package ru.suchkov.api.dao.mapper;
+package ru.suchkov.api.model.mapper;
 
 import java.util.List;
 
