@@ -6,7 +6,7 @@ import ru.suchkov.api.dao.DocumentTypeDao;
 import ru.suchkov.api.model.mapper.MapperFacade;
 
 @Service
-public class DocumentTypeServiceImpl implements DocumentService{
+public class DocumentTypeServiceImpl implements DocumentTypeService{
 
     private final MapperFacade mapperFacade;
     private final DocumentTypeDao documentTypeDao;
