@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS Organization (
   inn       VARCHAR(45)          COMMENT 'ИНН',
   kpp       VARCHAR(45)          COMMENT 'КПП',
   address   VARCHAR(225)         COMMENT 'Адрес',
-  phone     VARCHAR(15)          COMMENT 'Телефон',
+  phone     VARCHAR(25)          COMMENT 'Телефон',
   is_active BOOLEAN              COMMENT 'Активность в настоящий момент'
 );
 COMMENT ON TABLE Organization IS 'Организация';
@@ -17,17 +17,17 @@ CREATE TABLE IF NOT EXISTS Office (
   organization_id INTEGER NOT NULL     COMMENT 'Идентификатор организации, к которой принадлежит офис',
   name            VARCHAR(45)          COMMENT 'Название',
   address         VARCHAR(255)         COMMENT 'Адрес',
-  phone           VARCHAR(15)          COMMENT 'Телефон',
+  phone           VARCHAR(25)          COMMENT 'Телефон',
   is_active       BOOLEAN              COMMENT 'Активность в настоящий момент'
 );
 COMMENT ON TABLE Office IS 'Офис';
 
-CREATE TABLE IF NOT EXISTS DocumentType (
+CREATE TABLE IF NOT EXISTS Document_Type (
   code    INTEGER              COMMENT 'Уникальный идентификатор - код документа' PRIMARY KEY,
   version INTEGER NOT NULL     COMMENT 'Служебное поле hibernate',
-  name    VARCHAR(45) NOT NULL COMMENT 'Название'
+  name    VARCHAR(225) NOT NULL COMMENT 'Название'
 );
-COMMENT ON TABLE DocumentType IS 'Тип документа';
+COMMENT ON TABLE Document_Type IS 'Тип документа';
 
 CREATE TABLE IF NOT EXISTS Document (
   id                 INTEGER              COMMENT 'Уникальный идентификатор' PRIMARY KEY AUTO_INCREMENT,
@@ -41,7 +41,7 @@ COMMENT ON TABLE Document IS 'Документ';
 CREATE TABLE IF NOT EXISTS Country (
   code    INTEGER              COMMENT 'Уникальный идентификатор - код страны' PRIMARY KEY,
   version INTEGER NOT NULL     COMMENT 'Служебное поле hibernate',
-  name    VARCHAR(45) NOT NULL COMMENT ''
+  name    VARCHAR(225) NOT NULL COMMENT ''
 );
 COMMENT ON TABLE Country IS 'Страна';
 
@@ -52,8 +52,8 @@ CREATE TABLE IF NOT EXISTS User (
   last_name        VARCHAR(45)          COMMENT 'Фамилия',
   middle_name      VARCHAR(45)          COMMENT 'Отчество',
   office_id        INTEGER NOT NULL     COMMENT 'Идентификатор офиса, в котором работает сотрудник',
-  position         VARCHAR(45)          COMMENT 'Занимаемая должность',
-  phone            VARCHAR(15)          COMMENT 'Телефон',
+  position         VARCHAR(225)          COMMENT 'Занимаемая должность',
+  phone            VARCHAR(25)          COMMENT 'Телефон',
   document_id      INTEGER              COMMENT 'Идентификатор документа, удостоверяющего личность',
   citizenship_code INTEGER              COMMENT 'Код страны',
   is_identified    BOOLEAN              COMMENT 'Является ли сотрудник идентифицированным'
@@ -64,7 +64,7 @@ CREATE INDEX IX_Organization_Id ON Office (organization_id);
 ALTER TABLE Office ADD FOREIGN KEY (organization_id) REFERENCES Organization(id);
 
 CREATE INDEX IX_Document_Type_Code ON Document (document_type_code);
-ALTER TABLE Document ADD FOREIGN KEY (document_type_code) REFERENCES DocumentType(code);
+ALTER TABLE Document ADD FOREIGN KEY (document_type_code) REFERENCES Document_Type(code);
 
 CREATE INDEX IX_Office_Id ON User (office_id);
 ALTER TABLE User ADD FOREIGN KEY (office_id) REFERENCES Office(id);
