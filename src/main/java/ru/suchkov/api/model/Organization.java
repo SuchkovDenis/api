@@ -64,6 +64,6 @@ public class Organization {
     /**
      * Активность организации в настоящий момент
      */
-    @Column(name = "is_active", columnDefinition = "TINYINT(1)")
+    @Column(name = "is_active")
     private boolean isActive;
 }

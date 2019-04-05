@@ -58,6 +58,6 @@ public class User {
     /**
      * Идентифицирован ли сотрудник
      */
-    @Column(name = "is_identified", columnDefinition = "TINYINT(1)")
+    @Column(name = "is_identified")
     private boolean isIdentified;
 }
