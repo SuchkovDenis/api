@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "DocumentType")
+@Table(name = "Document_Type")
 public class DocumentType {
 
     /**
@@ -20,7 +20,7 @@ public class DocumentType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "code")
-    private Long id;
+    private Long code;
 
     /**
      * Служебное поле hibernate

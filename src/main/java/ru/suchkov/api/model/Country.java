@@ -20,7 +20,7 @@ public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "code")
-    private Long id;
+    private Long code;
 
     /**
      * Служебное поле hibernate
