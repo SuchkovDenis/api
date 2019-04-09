@@ -35,7 +35,7 @@ public class User {
      * Имя сотрудника
      */
     @Column(name = "last_name", length = 45, nullable = false)
-    private String lastName;
+    private String secondName;
 
     /**
      * Имя сотрудника

@@ -6,4 +6,6 @@ import ru.suchkov.api.model.User;
 
 @Repository
 public interface UserDao extends CrudRepository<User, Long> {
+
+    User findUserById(long id);
 }
