@@ -48,4 +48,11 @@ public class Office {
      */
     @Column(name = "is_active")
     private boolean isActive;
+
+    /**
+     * Организация, к которой принадлежит офис
+     */
+    @ManyToOne
+    @JoinColumn(name="organization_id")
+    private Organization organization;
 }

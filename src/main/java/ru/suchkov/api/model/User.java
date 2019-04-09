@@ -60,4 +60,25 @@ public class User {
      */
     @Column(name = "is_identified")
     private boolean isIdentified;
+
+    /**
+     * Документ сотрудника
+     */
+    @OneToOne
+    @JoinColumn(name="document_id")
+    private Document document;
+
+    /**
+     * Страна сотрудника
+     */
+    @OneToOne
+    @JoinColumn(name="citizenship_code")
+    private Country country;
+
+    /**
+     * Страна сотрудника
+     */
+    @OneToOne
+    @JoinColumn(name="office_id")
+    private Office office;
 }
