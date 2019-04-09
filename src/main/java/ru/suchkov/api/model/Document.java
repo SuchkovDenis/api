@@ -37,4 +37,8 @@ public class Document {
      */
     @Column(name = "date", nullable = false)
     private Date date;
+
+    @ManyToOne
+    @JoinColumn(name = "document_type_code")
+    private DocumentType documentType;
 }

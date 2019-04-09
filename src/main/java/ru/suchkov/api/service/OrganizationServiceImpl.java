@@ -3,7 +3,7 @@ package ru.suchkov.api.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.suchkov.api.dao.OrganizationDao;
+import ru.suchkov.api.dao.organization.OrganizationDao;
 import ru.suchkov.api.model.Organization;
 import ru.suchkov.api.model.mapper.MapperFacade;
 import ru.suchkov.api.view.OrganizationView;

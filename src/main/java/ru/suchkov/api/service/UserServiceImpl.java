@@ -2,7 +2,7 @@ package ru.suchkov.api.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.suchkov.api.dao.UserDao;
+import ru.suchkov.api.dao.user.UserDao;
 import ru.suchkov.api.model.User;
 import ru.suchkov.api.model.mapper.MapperFacade;
 import ru.suchkov.api.view.UserView;
