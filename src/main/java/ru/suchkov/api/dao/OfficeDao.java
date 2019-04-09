@@ -6,4 +6,6 @@ import ru.suchkov.api.model.Office;
 
 @Repository
 public interface OfficeDao extends CrudRepository<Office, Long> {
+
+    Office findOfficeById(long id);
 }
