@@ -59,7 +59,7 @@ public class User {
      * Идентифицирован ли сотрудник
      */
     @Column(name = "is_identified")
-    private boolean isIdentified;
+    private Boolean isIdentified;
 
     /**
      * Документ сотрудника

@@ -65,5 +65,5 @@ public class Organization {
      * Активность организации в настоящий момент
      */
     @Column(name = "is_active")
-    private boolean isActive;
+    private Boolean isActive;
 }

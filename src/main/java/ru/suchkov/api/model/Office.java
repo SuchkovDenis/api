@@ -47,7 +47,7 @@ public class Office {
      * Активность офиса в настоящий момент
      */
     @Column(name = "is_active")
-    private boolean isActive;
+    private Boolean isActive;
 
     /**
      * Организация, к которой принадлежит офис
