@@ -14,7 +14,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @Api(value = "OfficeController", description = "Управление информацией об офисах")
 @RestController
-@RequestMapping(value = "/", produces = APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/office", produces = APPLICATION_JSON_VALUE)
 public class OfficeController {
 
     private final OfficeService officeService;
@@ -25,7 +25,7 @@ public class OfficeController {
     }
 
     @ApiOperation(value = "Получить офис по id", httpMethod = "GET")
-    @GetMapping("/office/{id}")
+    @GetMapping("/{id}")
     public OfficeView office(@PathVariable long id) {
         return officeService.getOffice(id);
     }

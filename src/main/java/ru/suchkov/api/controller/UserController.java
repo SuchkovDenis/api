@@ -14,7 +14,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @Api(value = "UserController", description = "Управление информацией о сотрудниках")
 @RestController
-@RequestMapping(value = "/", produces = APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/user", produces = APPLICATION_JSON_VALUE)
 public class UserController {
 
     private final UserService userService;
@@ -25,7 +25,7 @@ public class UserController {
     }
 
     @ApiOperation(value = "Получить сотрудника по id", httpMethod = "GET")
-    @GetMapping("/user/{id}")
+    @GetMapping("/{id}")
     public UserView user(@PathVariable long id) {
         return userService.getUser(id);
     }

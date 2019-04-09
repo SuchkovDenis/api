@@ -15,7 +15,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @Api(value = "DocumentTypeController", description = "Получение справки по типам документов")
 @RestController
-@RequestMapping(value = "/", produces = APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/docs", produces = APPLICATION_JSON_VALUE)
 public class DocumentTypeController {
 
     private final DocumentTypeService documentTypeService;
@@ -26,7 +26,7 @@ public class DocumentTypeController {
     }
 
     @ApiOperation(value = "Получить список всех типов документов", httpMethod = "GET")
-    @GetMapping("/docs")
+    @GetMapping
     public List<DocumentTypeView> persons() {
         return documentTypeService.documentTypes();
     }

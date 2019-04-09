@@ -15,7 +15,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @Api(value = "CountryController", description = "Получение справки по странам")
 @RestController
-@RequestMapping(value = "/", produces = APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/countries", produces = APPLICATION_JSON_VALUE)
 public class CountryController {
 
     private final CountryService countryService;
@@ -26,7 +26,7 @@ public class CountryController {
     }
 
     @ApiOperation(value = "Получить список всех стран", httpMethod = "GET")
-    @GetMapping("/countries")
+    @GetMapping
     public List<CountryView> persons() {
         return countryService.countries();
     }
